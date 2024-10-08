@@ -2,43 +2,43 @@
 
 - [Peer-aided Repairer: Empowering Large Models to Repair Advanced Student Assignments](#peer-aided-repairer-empowering-large-models-to-repair-advanced-student-assignments)
 	- [Defects4DS](#defects4ds)
-			- [1. assignment description](#1-assignment-description)
-			- [2. student submissions](#2-student-submissions)
-			- [3. test cases](#3-test-cases)
-			- [4. codebook.pdf](#4-codebookpdf)
-			- [5. labeled\_information.jsonl](#5-labeled_informationjsonl)
-			- [6. comparison with ITSP](#6-comparison-with-itsp)
+		- [1. assignment description](#1-assignment-description)
+		- [2. student submissions](#2-student-submissions)
+		- [3. test cases](#3-test-cases)
+		- [4. codebook.pdf](#4-codebookpdf)
+		- [5. labeled\_information.jsonl](#5-labeled_informationjsonl)
+		- [6. comparison with ITSP](#6-comparison-with-itsp)
 	- [Code](#code)
-			- [1. run.py](#1-runpy)
-			- [2. evaluation.py](#2-evaluationpy)
-			- [3. calculate\_psm\_score.py](#3-calculate_psm_scorepy)
-			- [4. code\_standardization](#4-code_standardization)
+		- [1. run.py](#1-runpy)
+		- [2. evaluation.py](#2-evaluationpy)
+		- [3. calculate\_psm\_score.py](#3-calculate_psm_scorepy)
+		- [4. code\_standardization](#4-code_standardization)
 			- [pipeline](#pipeline)
 	- [questionaire\_results.xlsx](#questionaire_resultsxlsx)
 
 
 ## Defects4DS
 
-#### 1. assignment description
+### 1. assignment description
 
 Inside this folder are the descriptions of the four assignments, including problem description, input/output form, and example input/output.
 
-#### 2. student submissions
+### 2. student submissions
 
 Inside this folder are the students' submissions. 
 Each submission includes two code variations: a correct code that successfully passes all five test cases, and a buggy code that represents the student’s last incorrect attempt.
 The buggy codes contain semantic errors only, and the discrepancy between the correct code and the buggy code is limited to a maximum of five lines. 
 
-#### 3. test cases
+### 3. test cases
 
 Inside this folder are the test cases for the four assignments, used to evaluate the correctness of the submitted code.
 
-#### 4. codebook.pdf
+### 4. codebook.pdf
 
 Our dataset divides bugs into 7 main categories and 30 subcategories. 
 This file contains detailed information of the classification, and we provide an example for each bug type.
 
-#### 5. labeled_information.jsonl
+### 5. labeled_information.jsonl
 
 This file contains the labeled information, test case results of the buggy code, and the peer solution selected by PSM score for each submission.
 
@@ -71,27 +71,27 @@ The following is the description of each item:
 - **test_case_result**: the results of the buggy code passing the test cases.
 - **peer_solution**: the user ID of the peer solution selected by PSM score (all the coefficients are set to 0.25).
 
-#### 6. comparison with ITSP
+### 6. comparison with ITSP
 
 We conducted an in-depth comparison between Defects4DS dataset and ITSP dataset to explain the motivation for creating Defects4DS. The detailed information is inside this folder.
 
 ## Code
 
-#### 1. run.py
+### 1. run.py
 
 This file provides code for generating prompts and calling LLM to obtain its output.
 
-#### 2. evaluation.py
+### 2. evaluation.py
 
 This file provides an evaluation method for C language code and a calculation method to judge whether the code is fixed. 
 
-#### 3. calculate_psm_score.py
+### 3. calculate_psm_score.py
 
 This file provides the calculation methods of PSM score.
 The calculation of *bm25_score* refers to https://github.com/dorianbrown/rank_bm25.
 The calculation of *data_flow_match_score* and *ast_match_score* refers to https://github.com/reddy-lab-code-research/XLCoST/tree/main/code/translation/evaluator/CodeBLEU.
 
-#### 4. code_standardization
+### 4. code_standardization
 
 This folder contains code for standardizing C language code to alleviate the impact of different identifier naming.
 
